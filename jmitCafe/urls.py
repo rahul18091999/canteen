@@ -21,6 +21,6 @@ router = routers.DefaultRouter()
 router.register(r'admindetail', views.AdminViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('admindetail/',include('admindetails.urls')),
+    path('adminn/',include('admindetails.urls')),
     path('',include(router.urls))
 ]
