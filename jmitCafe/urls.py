@@ -18,9 +18,9 @@ from django.urls import path,include
 from rest_framework import routers
 from admindetails import views
 router = routers.DefaultRouter()
-router.register(r'admindetail', views.AdminViewSet)
+# router.register(r'admindetail', views.AdminViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('adminn/',include('admindetails.urls')),
-    path('',include(router.urls))
+    path('',include('admindetails.urls')),
+    # path('',include(router.urls))
 ]

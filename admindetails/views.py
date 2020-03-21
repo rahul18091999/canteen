@@ -6,7 +6,10 @@ from .serializers import AdminDetailSerializer
 from .models import admindetail
 from django.http import JsonResponse
 
-class AdminViewSet(viewsets.ModelViewSet):
+class AdminViewSet(generics.CreateAPIView):
+    queryset = admindetail.objects.all()
+    serializer_class = AdminDetailSerializer
+class AdminDetail(generics.ListAPIView):
     queryset = admindetail.objects.all()
     serializer_class = AdminDetailSerializer
 
@@ -14,7 +17,7 @@ class AdminAuthenticateList(generics.ListAPIView):
     serializer_class = AdminDetailSerializer
 
     def get_queryset(self):
-        msg=admindetail.objects.filter(id=4)
+        msg=admindetail.objects.filter(id=1)
         queryset = admindetail.objects.all()
         email = self.request.query_params.get('email', None)
         password = self.request.query_params.get('password', None)
