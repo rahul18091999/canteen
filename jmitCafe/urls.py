@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from admindetails import views
+from itemdetails import views
+from django.conf import settings
+from django.conf.urls.static import static  
 router = routers.DefaultRouter()
-# router.register(r'admindetail', views.AdminViewSet)
+router.register(r'itemdetail', views.ItemViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('admindetails.urls')),
-    # path('',include(router.urls))
+    path('router/',include(router.urls))
 ]
+
+urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
