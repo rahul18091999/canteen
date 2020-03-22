@@ -24,7 +24,8 @@ router.register(r'itemdetail', views.ItemViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('admindetails.urls')),
-    path('router/',include(router.urls))
+    path('router/',include(router.urls)),
+    path('userdetail/',include('userdetails.urls'))
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

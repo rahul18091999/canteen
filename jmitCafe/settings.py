@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'admindetails',
     'itemdetails',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'userdetails',
 ]
 
 MIDDLEWARE = [
