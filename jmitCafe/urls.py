@@ -22,7 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static  
 router = routers.DefaultRouter()
 router.register(r'itemdetail', views.ItemViewSet),
-router.register('cartupdate',CartUpate)
+router.register('cartupdate',CartUpate),
+router.register('itemimage',views.ImageView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('admindetails.urls')),

@@ -13,8 +13,6 @@ class OrderView(generics.ListAPIView):
     serializer_class=OrderDetailSerializer
     def get_queryset(self):
         queryset = orderdetail.objects.all()
-        for i in queryset:
-                i.order=json.loads(i.order)
         return queryset
 
 
